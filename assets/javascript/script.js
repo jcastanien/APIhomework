@@ -22,7 +22,7 @@
             var nameOfGif = results[i].slug;
             var paragraphOne = $("<p>").text("Rating: " + holder);
             gifDiv.append(paragraphOne);
-            var imgURL = results[i].url;
+            var imgURL = results[i].images.fixed_width.url;
             var image = $("<img>").attr("src", imgURL);
             gifDiv.append(image);
             $("#gifs-view").prepend(gifDiv);
@@ -63,7 +63,7 @@
       });
 
       // Adding a click event listener to all elements with a class of "movie"
-      $(document).on("click", ".gifList", displayGifInfo);
+      $(document).on("click", ".gif", displayGifInfo);
 
       // Calling the renderButtons function to display the intial buttons
       renderButtons();
